@@ -34,7 +34,7 @@ public class HitRequest {
         this.app = hitRequestDto.getApp();
         this.ip = hitRequestDto.getIp();
         this.uri = hitRequestDto.getUri();
-        this.dateTime = hitRequestDto.getTime();
+        this.dateTime = hitRequestDto.getTimestamp();
     }
 
 }
