@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.practicum.dto.HitRequestDto;
 import ru.practicum.dto.StatsViewDto;
-import ru.practicum.entity.HitRequest;
 import ru.practicum.mapper.HitRequestMapper;
 import ru.practicum.repository.StatsServerRepository;
 

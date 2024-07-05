@@ -9,7 +9,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.dto.HitRequestDto;
 import ru.practicum.dto.StatsViewDto;
-import ru.practicum.entity.HitRequest;
 import ru.practicum.service.StatsServerService;
 
 import java.time.LocalDateTime;
