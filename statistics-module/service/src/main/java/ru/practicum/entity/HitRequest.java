@@ -27,7 +27,7 @@ public class HitRequest {
     @Column(length = 20)
     private String ip;
 
-    @Column
+    @Column(name = "date_time")
     private LocalDateTime dateTime;
 
     public HitRequest(HitRequestDto hitRequestDto) {
