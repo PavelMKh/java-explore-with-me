@@ -24,24 +24,24 @@ public class StatsServerService {
     }
 
     public List<StatsViewDto> getViewStatistics(List<String> uris,
-                                                LocalDateTime start,
-                                                LocalDateTime end,
-                                                Boolean unique) {
+                                            LocalDateTime start,
+                                            LocalDateTime end,
+                                            Boolean unique) {
         if (uris != null) {
             if (unique) {
                 log.info("Received a request with uri, unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.findByUriIsUnique(uris, start, end);
+                return statsServerRepository.uniqueIpUri(uris, start, end);
             } else {
                 log.info("Received a request with uri, not unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.findByUriNotUniqueIp(uris, start, end);
+                return statsServerRepository.noUniqueIpUri(uris, start, end);
             }
         } else {
             if (unique) {
                 log.info("Received a request without uri, unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.findUniqueIp(start, end);
+                return statsServerRepository.uniqueIrBetween(start, end);
             } else {
                 log.info("Received a request without uri, not unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.findNotUniqueIp(start, end);
+                return statsServerRepository.notUniqueIpBetween(start, end);
             }
         }
     }
