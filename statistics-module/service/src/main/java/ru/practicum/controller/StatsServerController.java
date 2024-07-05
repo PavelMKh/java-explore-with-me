@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.dto.HitRequestDto;
-import ru.practicum.dto.StatsDto;
 import ru.practicum.dto.StatsViewDto;
 import ru.practicum.service.StatsServerService;
 
