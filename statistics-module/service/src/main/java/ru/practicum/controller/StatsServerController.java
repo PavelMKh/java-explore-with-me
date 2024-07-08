@@ -11,6 +11,8 @@ import ru.practicum.dto.HitRequestDto;
 import ru.practicum.dto.StatsViewDto;
 import ru.practicum.service.StatsServerService;
 
+import static ru.practicum.Constants.DATE_TIME_JSON_FORMAT;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,8 +32,8 @@ public class StatsServerController {
 
     @GetMapping("/stats")
     public List<StatsViewDto> getViewStatistics(@RequestParam(required = false) List<String> uris,
-                                            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime start,
-                                            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
+                                            @RequestParam @DateTimeFormat(pattern = DATE_TIME_JSON_FORMAT) LocalDateTime start,
+                                            @RequestParam @DateTimeFormat(pattern = DATE_TIME_JSON_FORMAT) LocalDateTime end,
                                             @RequestParam(defaultValue = "false") Boolean unique) {
         return statsServerService.getViewStatistics(uris, start, end, unique);
     }

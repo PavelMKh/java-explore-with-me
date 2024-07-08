@@ -1,7 +1,9 @@
 package ru.practicum;
 
+import org.springframework.boot.SpringApplication;
+
 public class EwmServiceApp {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SpringApplication.run(EwmServiceApp.class, args);
     }
 }

@@ -31,18 +31,17 @@ public class StatsServerService {
             if (unique) {
                 log.info("Received a request with uri, unique IP, parameters: start date {}, end date {}", start, end);
                 return statsServerRepository.uniqueIpUri(uris, start, end);
-            } else {
-                log.info("Received a request with uri, not unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.noUniqueIpUri(uris, start, end);
             }
+            log.info("Received a request with uri, not unique IP, parameters: start date {}, end date {}", start, end);
+            return statsServerRepository.noUniqueIpUri(uris, start, end);
+
         } else {
             if (unique) {
                 log.info("Received a request without uri, unique IP, parameters: start date {}, end date {}", start, end);
                 return statsServerRepository.uniqueIrBetween(start, end);
-            } else {
-                log.info("Received a request without uri, not unique IP, parameters: start date {}, end date {}", start, end);
-                return statsServerRepository.notUniqueIpBetween(start, end);
             }
+            log.info("Received a request without uri, not unique IP, parameters: start date {}, end date {}", start, end);
+            return statsServerRepository.notUniqueIpBetween(start, end);
         }
     }
 }
